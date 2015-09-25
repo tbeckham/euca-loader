@@ -80,7 +80,7 @@ class EC2Create(TaskSet):
     def allocate_address(self):
         address = self.client.time_operation(self.client.allocate_address)
         self.client.time_operation(self.client.release_address, address)
-        
+
 class EBSCreate(TaskSet):
     @task(1)
     def create_volumes(self):
@@ -102,7 +102,7 @@ class S3Operations(TaskSet):
             self.client.time_operation(self.client.s3.delete_bucket, bucket)
 
 
-class AverageUser(EC2Create, EC2Read, S3Operations):
+class AverageUser(EC2Create, EBSCreate, EC2Read, S3Operations):
     pass
 
 
@@ -116,4 +116,3 @@ class EucaopsUser(EucaopsLocust):
 
     def on_stop(self):
         self.client.cleanup_resources()
-
