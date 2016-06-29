@@ -102,7 +102,7 @@ class S3Operations(TaskSet):
             self.client.time_operation(self.client.s3.delete_bucket, bucket)
 
 
-class AverageUser(EC2Create, EBSCreate, EC2Read, S3Operations):
+class AverageUser(EC2Create, EC2Read, S3Operations):
     pass
 
 
