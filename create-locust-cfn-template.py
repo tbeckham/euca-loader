@@ -28,7 +28,7 @@ script_url = template.add_parameter(Parameter(
     "ScriptURL",
     Description="URL used to download the locustfile",
     Type="String",
-    Default="https://gist.githubusercontent.com/tbeckham/raw/locustfile.py"
+    Default="https://gist.githubusercontent.com/tbeckham/03710a014a09a718d541/raw/locustfile.py"
 ))
 desired_capacity = template.add_parameter(Parameter(
     "DesiredCapacity",
