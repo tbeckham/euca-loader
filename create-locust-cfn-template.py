@@ -99,7 +99,7 @@ cat > /tmp/instance-handle-data <<EOF
 }
 EOF
 LOG_FILE=/mnt/locust.log
-apt-get install -y python-setuptools python-dev git python-pip gcc unzip ntp apache2
+apt-get install -y python-setuptools python-dev git python-pip gcc unzip ntp apache2 libffi-dev
 wget https://bootstrap.pypa.io/ez_setup.py -O - | python
 ntpdate -u pool.ntp.org
 pip install gevent==1.0.2
