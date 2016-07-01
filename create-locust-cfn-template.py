@@ -160,6 +160,18 @@ instance_sg = template.add_resource(
                 ),
                 ec2.SecurityGroupRule(
                     IpProtocol="tcp",
+                    FromPort="5557",
+                    ToPort="5557",
+                    CidrIp="0.0.0.0/0",
+                ),
+                ec2.SecurityGroupRule(
+                    IpProtocol="tcp",
+                    FromPort="5558",
+                    ToPort="5558",
+                    CidrIp="0.0.0.0/0",
+                ),
+                ec2.SecurityGroupRule(
+                    IpProtocol="tcp",
                     FromPort="80",
                     ToPort="80",
                     CidrIp="0.0.0.0/0",
